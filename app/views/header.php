@@ -32,9 +32,13 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
+
+                        <?php if (isset($_SESSION['role']) && ($_SESSION['role'] === 'admin' || $_SESSION['role'] === 'super_admin')): ?>
+
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>dashboard.php">Dashboard </a>
+                            </li>
+                        <?php endif; ?>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Link</a>
                         </li>
