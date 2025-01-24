@@ -20,4 +20,11 @@ class User
 
         return $stmt->execute([$username, $email, $hashedPassword, $role]);
     }
+
+    public function getUserByEmail($email)
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM users WHERE email = ?");
+        $stmt->execute([$email]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }

@@ -50,6 +50,9 @@
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>register.php">Register</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>login.php">Login</a>
+                        </li>
                     </ul>
                 </div>
             </div>
