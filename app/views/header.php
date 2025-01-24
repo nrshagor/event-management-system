@@ -48,7 +48,7 @@
                     </ul>
                     <form class="d-flex" role="search" action="" method="GET">
                         <input class="form-control me-2" type="search" name="search" placeholder="Search events..." aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-success">Search</button>
                     </form>
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <ul class="navbar-nav">
