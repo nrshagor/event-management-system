@@ -49,3 +49,26 @@ h2 {
   padding: 10px 24px;
   font-weight: 600;
 }
+
+/* search php */
+.image-container {
+  height: 250px;
+  /* Fixed height for the image */
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Ensures the image covers the div proportionally */
+}
+
+.card {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  /* Subtle hover effect */
+}

@@ -65,14 +65,14 @@ if (!is_array($events)) {
     </div>
 
     <!-- See More Events Button -->
-    <a href="<?= BASE_URL ?>public/search_results.php" class="btn btn-outline-primary btn-lg mt-3">
+    <a href="<?= BASE_URL ?>search_results.php" class="btn btn-outline-primary btn-lg mt-3">
         See All Events
     </a>
 
     <!-- Search Events Button -->
 
 
-    <a href="<?= isset($_SESSION['user_id']) ? BASE_URL . 'public/events.php' : BASE_URL . 'public/login.php' ?>" class="btn btn-outline-secondary btn-lg mt-3">
+    <a href="<?= isset($_SESSION['user_id']) ? BASE_URL . 'events.php' : BASE_URL . 'login.php' ?>" class="btn btn-outline-secondary btn-lg mt-3">
         Manage Your Events
     </a>
 
