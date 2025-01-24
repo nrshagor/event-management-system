@@ -39,17 +39,17 @@
                                 <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>dashboard.php">Dashboard </a>
                             </li>
                         <?php endif; ?>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
+                        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'super_admin'): ?>
+                            <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>manage_users.php">Manage Users</a></li>
+                        <?php endif; ?>
+
+
                     </ul>
-                    <form class="d-flex" role="search" action="" method="GET">
+                    <form class="d-flex" role="search" action="<?= BASE_URL ?>search_results.php" method="GET">
                         <input class="form-control me-2" type="search" name="search" placeholder="Search events..." aria-label="Search">
-                        <button class="btn btn-outline-success">Search</button>
+                        <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
+
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <ul class="navbar-nav">
                             <li class="nav-item">
