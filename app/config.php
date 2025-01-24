@@ -34,7 +34,7 @@ function loadEnv($filePath)
 require_once __DIR__ . '/../database/db.php';
 
 // Define base URL
-define('BASE_URL', getenv('BASE_URL') ?:  'http://localhost/event-management/');
+define('BASE_URL', getenv('BASE_URL') ?:  'http://localhost/event-management-system/');
 
 
 // Utility function to redirect
