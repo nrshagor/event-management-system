@@ -46,6 +46,11 @@
                         <input class="form-control me-2" type="search" name="search" placeholder="Search events..." aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>register.php">Register</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
