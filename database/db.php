@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../database/db.php';
+require_once __DIR__ . '/../app/config.php';
 
 // Load environment variables
 loadEnv(__DIR__ . '/../database/.env');
