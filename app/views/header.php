@@ -46,14 +46,23 @@
                         <input class="form-control me-2" type="search" name="search" placeholder="Search events..." aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                     </form>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>register.php">Register</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>login.php">Login</a>
-                        </li>
-                    </ul>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>logout.php">Logout</a>
+                            </li>
+                        </ul>
+
+                    <?php else: ?>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>register.php">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>login.php">Login</a>
+                            </li>
+                        </ul>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
