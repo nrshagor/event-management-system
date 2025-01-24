@@ -45,7 +45,7 @@ if (!is_array($events)) {
                                 </div>
                             </div>
                             <?php if ($remainingSeats > 0): ?>
-                                <a href="<?= BASE_URL ?>public/register_attendee.php?event_id=<?= $event['id'] ?>" class="btn btn-primary btn-block">
+                                <a href="<?= BASE_URL ?>register_attendee.php?event_id=<?= $event['id'] ?>" class="btn btn-primary btn-block">
                                     Register Now (<?= $remainingSeats ?> left)
                                 </a>
                             <?php else: ?>
