@@ -15,9 +15,41 @@ if (!is_array($events)) {
 ?>
 
 <?php include __DIR__ . '/app/views/header.php'; ?>
+<style>
+    #calendar {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #eventImage {
+        border-radius: 10px;
+        max-height: 300px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .modal-body h3 {
+        font-size: 1.75rem;
+        font-weight: bold;
+    }
+
+    .fc-daygrid-event-harness {
+        cursor: pointer;
+    }
+</style>
 
 <div class="container text-center mt-5">
     <h1 class="text-primary font-weight-bold">Welcome to Event Management</h1>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Event Calendar</h2>
+        <div id="calendar"></div>
+    </div>
+
     <p class="lead text-muted">Discover and register for upcoming events with ease!</p>
 
     <div class="row mt-4">
@@ -75,6 +107,41 @@ if (!is_array($events)) {
     <a href="<?= isset($_SESSION['user_id']) ? BASE_URL . 'events.php' : BASE_URL . 'login.php' ?>" class="btn btn-outline-secondary btn-lg mt-3">
         Manage Your Events
     </a>
+
+    <!-- Event Details Modal -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventModalLabel">Event Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <img id="eventImage" src="" class="img-fluid rounded mb-3" alt="Event Image" style="max-height: 300px;">
+                    </div>
+                    <h3 id="eventTitle" class="text-primary"></h3>
+                    <p id="eventDate"></p>
+                    <p id="eventLocation"></p>
+                    <p id="eventDescription" class="text-muted"></p>
+
+                    <!-- Progress bar -->
+                    <div class="progress mb-3">
+                        <div id="eventProgressBar" class="progress-bar bg-success" role="progressbar"
+                            style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                        </div>
+                    </div>
+
+                    <p id="eventCapacity" class="text-muted"></p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" id="eventRegisterLink" class="btn btn-primary">Register Now</a>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 </div>
 

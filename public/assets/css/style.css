@@ -2,6 +2,14 @@ body {
   font-family: "Poppins", sans-serif;
   background-color: #ecf4fd;
 }
+#calendar {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
 .table-primary {
   --bs-table-bg: #ecf4ff;

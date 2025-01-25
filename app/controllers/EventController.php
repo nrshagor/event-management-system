@@ -157,6 +157,7 @@ class EventController
 
 
 
+
     public function deleteEvent($id)
     {
         if (!isset($_SESSION['user_id'])) {
