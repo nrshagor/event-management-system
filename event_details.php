@@ -13,10 +13,15 @@ if (!isset($_GET['event_id'])) {
 $eventId = intval($_GET['event_id']);
 $eventController = new EventController($pdo);
 $attendeeController = new AttendeeController($pdo);
-$event = $eventController->getEventById($eventId);
+$event = $eventController->getEventByOnlyId($eventId);
 $attendeeCount = $attendeeController->countAttendees($eventId);
 
 if ($event) {
+    $eventDate = new DateTime($event['date'], new DateTimeZone('UTC'));
+    $currentDate = new DateTime('now', new DateTimeZone('UTC'));
+
+    $eventClosed = $eventDate < $currentDate;
+
     echo json_encode([
         "success" => true,
         "event" => [
@@ -27,7 +32,8 @@ if ($event) {
             "capacity" => $event['capacity'],
             "attendees" => $attendeeCount,
             "remaining" => max(0, $event['capacity'] - $attendeeCount),
-            "image_url" => BASE_URL . "public/uploads/" . $event['image']
+            "image_url" => BASE_URL . "public/uploads/" . $event['image'],
+            "closed" => $eventClosed
         ]
     ]);
 } else {

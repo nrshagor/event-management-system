@@ -37,6 +37,14 @@ class EventModel
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    // Get event by ID for the every  user
+    public function getEventByOnlyId($id)
+    {
+        $stmt = $this->pdo->prepare("SELECT * FROM events WHERE id = ?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     // Get paginated events with sorting and searching
     public function getPaginatedEvents($user_id, $limit, $offset, $sort, $search)
     {

@@ -81,6 +81,11 @@ class EventController
         $user_id = $_SESSION['user_id'];
         return $this->eventModel->getEventById($id, $user_id);
     }
+    public function getEventByOnlyId($id)
+    {
+
+        return $this->eventModel->getEventByOnlyId($id);
+    }
 
     public function getPaginatedEvents($limit, $offset, $sort, $search)
     {

@@ -1,7 +1,7 @@
 </div> <!-- Closing container -->
 
-<footer class="bg-white text-center text-dark py-3 mt-5 fixed-bottom">
-    <p class="mb-0">© <?= date('Y') ?> Event Management. All Rights Reserved. || This system is made with <i class="fa-regular fa-heart"></i> by <a href="https://nrshagor.com/" target="_blank">nrshagor.com</p>
+<footer class="bg-white text-center text-dark py-3 mt-5">
+    <p class="mb-0">© <?= date('Y') ?> Event Management. All Rights Reserved. || This system is made with <i class="fa-regular fa-heart"></i> by <a href="https://nrshagor.com/" target="_blank">nrshagor.com </a></p>
 </footer>
 
 
@@ -29,7 +29,6 @@
             },
             events: 'fetch_events.php',
             eventClick: function(info) {
-                // Fetch event data when clicked
                 fetch('event_details.php?event_id=' + info.event.id)
                     .then(response => response.json())
                     .then(data => {
@@ -40,7 +39,7 @@
                             document.getElementById('eventImage').src = data.event.image_url;
                             document.getElementById('eventDescription').innerText = data.event.description;
 
-                            // Progress bar calculation
+                            let eventClosed = data.event.closed;
                             let registered = parseInt(data.event.attendees);
                             let capacity = parseInt(data.event.capacity);
                             let remainingSeats = data.event.remaining;
@@ -49,23 +48,22 @@
                             document.getElementById('eventProgressBar').style.width = progressPercentage + '%';
                             document.getElementById('eventProgressBar').innerText = registered + ' / ' + capacity + ' Registered';
 
-                            if (remainingSeats > 0) {
-                                document.getElementById('eventCapacity').innerText = remainingSeats + ' spots left!';
-                                document.getElementById('eventRegisterLink').href = 'register_attendee.php?event_id=' + info.event.id;
-                                document.getElementById('eventRegisterLink').classList.remove('btn-danger');
-                                document.getElementById('eventRegisterLink').classList.add('btn-primary');
-                                document.getElementById('eventRegisterLink').innerText = 'Register Now';
-                                document.getElementById('eventRegisterLink').removeAttribute('disabled');
-                            } else {
-                                document.getElementById('eventCapacity').innerText = 'Event is fully booked!';
-                                document.getElementById('eventRegisterLink').href = '#';
+                            if (eventClosed) {
+                                document.getElementById('eventCapacity').innerText = 'This event is closed.';
+                                document.getElementById('eventRegisterLink').innerText = 'Event Closed';
                                 document.getElementById('eventRegisterLink').classList.remove('btn-primary');
                                 document.getElementById('eventRegisterLink').classList.add('btn-danger');
-                                document.getElementById('eventRegisterLink').innerText = 'Fully Booked';
                                 document.getElementById('eventRegisterLink').setAttribute('disabled', true);
+                                document.getElementById('eventRegisterLink').href = '#';
+                            } else {
+                                document.getElementById('eventCapacity').innerText = remainingSeats + ' spots left!';
+                                document.getElementById('eventRegisterLink').innerText = 'Register Now';
+                                document.getElementById('eventRegisterLink').classList.remove('btn-danger');
+                                document.getElementById('eventRegisterLink').classList.add('btn-primary');
+                                document.getElementById('eventRegisterLink').href = 'register_attendee.php?event_id=' + info.event.id;
+                                document.getElementById('eventRegisterLink').removeAttribute('disabled');
                             }
 
-                            // Show Bootstrap modal
                             var myModal = new bootstrap.Modal(document.getElementById('eventModal'));
                             myModal.show();
                         } else {
@@ -79,7 +77,6 @@
         calendar.render();
     });
 </script>
-
 
 </body>
 

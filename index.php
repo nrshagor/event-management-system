@@ -40,6 +40,65 @@ if (!is_array($events)) {
     .fc-daygrid-event-harness {
         cursor: pointer;
     }
+
+    .fc .fc-daygrid-event-harness-abs {
+        position: relative;
+    }
+
+    .fc-h-event .fc-event-main-frame {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        height: 100%;
+    }
+
+    #calendar {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .fc-toolbar-title {
+        font-size: 1.5rem !important;
+        /* Make the month title responsive */
+    }
+
+    .fc-daygrid-day-frame {
+        padding: 5px !important;
+        /* Reduce padding for small screens */
+    }
+
+    .fc-daygrid-day-bottom {
+        margin-top: 0px !important;
+    }
+
+    .fc-day-today {
+
+        background-color: rgb(204 237 187 / 15%) !important;
+    }
+
+    @media (max-width: 768px) {
+        .fc-toolbar {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .fc-toolbar .fc-toolbar-chunk {
+            margin-bottom: 10px;
+        }
+
+        #eventModal .modal-dialog {
+            max-width: 90%;
+        }
+
+        #eventImage {
+            max-height: 200px;
+        }
+
+        .modal-body p {
+            font-size: 0.9rem;
+        }
+    }
 </style>
 
 <div class="container text-center mt-5">
@@ -125,7 +184,6 @@ if (!is_array($events)) {
                     <p id="eventLocation"></p>
                     <p id="eventDescription" class="text-muted"></p>
 
-                    <!-- Progress bar -->
                     <div class="progress mb-3">
                         <div id="eventProgressBar" class="progress-bar bg-success" role="progressbar"
                             style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
