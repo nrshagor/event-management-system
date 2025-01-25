@@ -26,35 +26,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'])) {
 <?php if (isset($_GET['success'])): ?>
     <div class="alert alert-success">User role updated successfully!</div>
 <?php endif; ?>
+<div class="table-responsive">
+    <table class="table table-primary table-bordered ">
+        <thead class="table">
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>Username</th>
-            <th>Email</th>
-            <th>Current Role</th>
-            <th>Change Role</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($users as $user): ?>
-            <tr>
-                <td><?= htmlspecialchars($user['username']) ?></td>
-                <td><?= htmlspecialchars($user['email']) ?></td>
-                <td><?= htmlspecialchars($user['role']) ?></td>
-                <td>
-                    <form method="POST">
-                        <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
-                        <select name="role" class="form-control">
-                            <option value="user" <?= $user['role'] === 'user' ? 'selected' : '' ?>>User</option>
-                            <option value="admin" <?= $user['role'] === 'admin' ? 'selected' : '' ?>>Admin</option>
-                        </select>
-                        <button type="submit" class="btn btn-primary mt-2">Update</button>
-                    </form>
-                </td>
+            <tr class="table-info">
+                <th>Username</th>
+                <th>Email</th>
+                <th>Current Role</th>
+                <th>Change Role</th>
             </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <?php foreach ($users as $user): ?>
+                <tr>
+                    <td><?= htmlspecialchars($user['username']) ?></td>
+                    <td><?= htmlspecialchars($user['email']) ?></td>
+                    <td><?= htmlspecialchars($user['role']) ?></td>
+                    <td>
+                        <form method="POST">
+                            <input type="hidden" name="user_id" value="<?= $user['id'] ?>">
+                            <div class="d-md-flex  align-items-center gap-3">
+                                <select name=" role" class="form-control mr-5">
+                                    <option value="user" <?= $user['role'] === 'user' ? 'selected' : '' ?>>User</option>
+                                    <option value="admin" <?= $user['role'] === 'admin' ? 'selected' : '' ?>>Admin</option>
+                                </select>
+                                <button type="submit" class="action-btn-1  mt-2 mt-md-0">Update</button>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+</div>
 
 <?php include __DIR__ . '/app/views/footer.php'; ?>

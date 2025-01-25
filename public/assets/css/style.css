@@ -3,6 +3,10 @@ body {
   background-color: #ecf4fd;
 }
 
+.table-primary {
+  --bs-table-bg: #ecf4ff;
+}
+
 .navbar {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -48,6 +52,36 @@ h2 {
   border-radius: 15px;
   padding: 10px 24px;
   font-weight: 600;
+}
+
+.action-btn-1 {
+  border-radius: 5px;
+  padding: 8px 24px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #fff;
+  background-color: rgb(13, 110, 253);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.action-btn-1:hover {
+  background-color: rgb(56, 136, 255);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.action-btn-1:active {
+  background-color: rgb(10, 85, 200);
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.action-btn-1:focus {
+  outline: 2px solid rgba(13, 110, 253, 0.5);
+  outline-offset: 2px;
 }
 
 /* search php */
