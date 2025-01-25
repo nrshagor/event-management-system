@@ -6,7 +6,7 @@ loadEnv(__DIR__ . '/../database/.env');
 
 // Get environment variables
 $host = getenv('DB_HOST') ?: 'localhost';
-$dbname = getenv('DB_NAME') ?: 'default_db';
+$dbname = getenv('DB_NAME') ?: 'event_management';
 $username = getenv('DB_USER') ?: 'root';
 $password = getenv('DB_PASS') ?: '';
 

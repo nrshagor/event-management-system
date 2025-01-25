@@ -40,6 +40,9 @@
                             </li>
                         <?php endif; ?>
                         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'super_admin'): ?>
+                            <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>events.php">Manage Events</a></li>
+                        <?php endif; ?>
+                        <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'super_admin'): ?>
                             <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>manage_users.php">Manage Users</a></li>
                         <?php endif; ?>
 
