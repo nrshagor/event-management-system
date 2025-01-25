@@ -62,7 +62,8 @@ if (!$event) {
         <small class="text-muted">Leave empty to keep current image. Max size 5MB, allowed types: JPG, JPEG, PNG.</small>
     </div>
 
-    <button type="submit" class="btn btn-primary">Update Event</button>
+    <button type="submit" id="updateEventBtn" class="btn btn-primary">Update Event</button>
+
     <a href="events.php" class="btn btn-secondary">Cancel</a>
 </form>
 
@@ -76,7 +77,6 @@ if (!$event) {
             let formData = new FormData(this);
 
             $.ajax({
-
                 url: '<?= BASE_URL ?>/public/ajax/ajax_update_event.php',
                 type: 'POST',
                 data: formData,
@@ -85,10 +85,10 @@ if (!$event) {
                 dataType: 'json',
                 beforeSend: function() {
                     $("#message").html('<div class="alert alert-info">Updating...</div>');
-                    $("button[type='submit']").prop("disabled", true).text('Updating...');
+                    $("#updateEventBtn").prop("disabled", true).text('Updating...');
                 },
                 success: function(response) {
-                    $("button[type='submit']").prop("disabled", false).text('Update Event');
+                    $("#updateEventBtn").prop("disabled", false).text('Update Event');
 
                     if (response.success) {
                         $("#message").html('<div class="alert alert-success">' + response.message + '</div>');
@@ -104,11 +104,12 @@ if (!$event) {
                     }
                 },
                 error: function(xhr, status, error) {
-                    $("button[type='submit']").prop("disabled", false).text('Update Event');
+                    $("#updateEventBtn").prop("disabled", false).text('Update Event');
                     $("#message").html('<div class="alert alert-danger">Something went wrong. Please try again.</div>');
                 }
             });
         });
+
     });
 </script>
 
