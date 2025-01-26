@@ -26,19 +26,20 @@ $events = $eventController->getEvents();
 <?php include __DIR__ . '/app/views/header.php'; ?>
 
 <div class="container mt-4">
-    <div class="card shadow-lg border-0 p-4">
-        <h2 class="text-center mb-4 text-primary">Manage Your Events</h2>
+    <a href="dashboard.php" class="btn btn-light mb-3">Back</a>
+    <div class="card shadow  border-0 p-4">
+        <h2 class="text-center mb-4 text-dark">Manage Your Events</h2>
 
         <form id="eventForm" class="mb-4" enctype="multipart/form-data" method="POST">
 
-            <div class="row">
-                <div class="col-md-6">
+            <div class="row ">
+                <div class="col-md-6 pb-3 ">
                     <div class="form-group">
                         <label><strong>Event Name</strong></label>
                         <input type="text" name="name" class="form-control" placeholder="Enter Event Name" required>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 pb-3">
                     <div class="form-group">
                         <label><strong>Date</strong></label>
                         <input type="datetime-local" name="date" id="date" class="form-control" required>
@@ -46,19 +47,19 @@ $events = $eventController->getEvents();
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group pb-3">
                 <label><strong>Description</strong></label>
                 <textarea name="description" class="form-control" placeholder="Enter Event Description" required></textarea>
             </div>
 
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 pb-3">
                     <div class="form-group">
                         <label><strong>Location</strong></label>
                         <input type="text" name="location" class="form-control" placeholder="Enter Event Location" required>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 pb-3">
                     <div class="form-group">
                         <label><strong>Capacity</strong></label>
                         <input type="number" name="capacity" class="form-control" placeholder="Enter Capacity" required min="1">
@@ -66,14 +67,14 @@ $events = $eventController->getEvents();
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group pb-3">
                 <label><strong>Event Image</strong> (Optional)</label>
                 <input type="file" name="event_image" class="form-control" id="event_image">
                 <small class="text-muted">Max file size: 10MB</small>
 
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg btn-block">
+            <button type="submit" class="btn btn-primary btn-sm">
                 <i class="fas fa-plus-circle"></i> Create Event
             </button>
         </form>

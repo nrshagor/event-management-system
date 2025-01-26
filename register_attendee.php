@@ -54,7 +54,7 @@ if ($selected_event_id) {
         <?php if ($selected_event_id): ?>
             <input type="hidden" name="event_id" value="<?= $selected_event_id ?>">
         <?php else: ?>
-            <div class="form-group">
+            <div class="form-group pb-3">
                 <label for="event_id">Select Event</label>
                 <select name="event_id" id="event_id" class="form-control" required>
                     <option value="">-- Select Event --</option>
@@ -67,17 +67,18 @@ if ($selected_event_id) {
             </div>
         <?php endif; ?>
 
-        <div class="form-group">
+        <div class="form-group pb-3">
             <label for="user_name">Your Name</label>
             <input type="text" name="user_name" id="user_name" class="form-control" placeholder="Enter your name" required>
         </div>
 
-        <div class="form-group">
+        <div class="form-group pb-3">
             <label for="email">Your Email</label>
             <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
         </div>
 
         <button type="submit" class="btn btn-success btn-block">Register</button>
+        <a href="events.php" class="btn btn-light ">Back</a>
     </form>
 
     <div id="responseMessage" class="mt-3 text-center"></div>
