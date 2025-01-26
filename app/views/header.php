@@ -50,14 +50,14 @@
                         <?php if (isset($_SESSION['role']) && ($_SESSION['role'] === 'admin' || $_SESSION['role'] === 'super_admin')): ?>
 
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>dashboard.php">Dashboard </a>
+                                <a class="nav-link nav-btn" aria-current="page" href="<?= BASE_URL ?>dashboard.php">Dashboard </a>
                             </li>
                         <?php endif; ?>
                         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'super_admin'): ?>
-                            <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>events.php">Manage Events</a></li>
+                            <li class="nav-item"><a class="nav-link nav-btn" href="<?= BASE_URL ?>events.php">Manage Events</a></li>
                         <?php endif; ?>
                         <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'super_admin'): ?>
-                            <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>manage_users.php">Manage Users</a></li>
+                            <li class="nav-item "><a class="nav-link nav-btn" href="<?= BASE_URL ?>manage_users.php">Manage Users</a></li>
                         <?php endif; ?>
 
 
@@ -70,7 +70,7 @@
                     <?php if (isset($_SESSION['user_id'])): ?>
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+                                <a class="nav-link active nav-btn" aria-current="page" href="<?= BASE_URL ?>logout.php"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
                             </li>
                         </ul>
 
@@ -78,11 +78,11 @@
                         <ul class="navbar-nav">
 
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>register.php">
+                                <a class="nav-link active nav-btn" aria-current="page" href="<?= BASE_URL ?>register.php">
                                     <i class="fa-regular fa-address-book ml-2"></i> Register</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="<?= BASE_URL ?>login.php"> <i class="fa-solid fa-arrow-right-to-bracket ml-2"></i> Login</a>
+                                <a class="nav-link active nav-btn" aria-current="page" href="<?= BASE_URL ?>login.php"> <i class="fa-solid fa-arrow-right-to-bracket ml-2"></i> Login</a>
                             </li>
                         </ul>
                     <?php endif; ?>
