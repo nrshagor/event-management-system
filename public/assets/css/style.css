@@ -1,6 +1,12 @@
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #ecf4fd;
+  background: linear-gradient(to right, #f7fffe, #fff7f9);
+
+  font-family: "IBM Plex Sans", serif !important;
+  /* font-family: "Poppins", serif; */
+}
+.logo img {
+  width: 30%;
 }
 #calendar {
   max-width: 900px;
@@ -16,7 +22,7 @@ body {
 }
 
 .navbar {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-brand {

@@ -102,7 +102,7 @@ if (!is_array($events)) {
 </style>
 
 <div class="container text-center mt-5">
-    <h1 class="text-primary font-weight-bold">Welcome to Event Management</h1>
+    <h1 class="text-primary font-weight-bold">Welcome to Event Manager</h1>
 
     <div class="container mt-5">
         <h2 class="text-center mb-4">Event Calendar</h2>
