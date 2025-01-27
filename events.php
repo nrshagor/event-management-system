@@ -3,7 +3,7 @@ require_once __DIR__ . '/app/config.php';
 require_once __DIR__ . '/app/controllers/EventController.php';
 
 if (!isset($_SESSION['user_id'])) {
-    redirect('public/login.php');
+    redirect('login.php');
 }
 
 $eventController = new EventController($pdo);
@@ -20,12 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_event'])) {
 }
 
 // Fetch Events
-$events = $eventController->getEvents();
+$events = $eventController->getEvents($_SESSION['user_id']);
 ?>
 
 <?php include __DIR__ . '/app/views/header.php'; ?>
 
-<div class="container mt-4">
+<div class="container mt-4 mb-4">
     <a href="dashboard.php" class="btn btn-light mb-3">Back</a>
     <div class="card shadow  border-0 p-4">
         <h2 class="text-center mb-4 text-dark">Manage Your Events</h2>
@@ -84,7 +84,7 @@ $events = $eventController->getEvents();
 
         <h3 class="mt-5 text-secondary">Your Events</h3>
         <div class="table-responsive">
-            <table id="eventTable" class="table table-striped table-bordered shadow-sm">
+            <table id="eventTable" class="table">
                 <thead class="thead-dark">
                     <tr>
                         <th>Name</th>

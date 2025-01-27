@@ -33,7 +33,7 @@ if (!is_array($events)) {
                 $remainingSeats = max(0, $event['capacity'] - $attendeeCount);
             ?>
                 <div class="col-md-4">
-                    <div class="card shadow-lg border-0 mb-4">
+                    <div class="card  border-1 mb-4">
                         <img src="<?= BASE_URL ?>public/uploads/<?= htmlspecialchars($event['image']) ?>"
                             class="card-img-top"
                             alt="<?= htmlspecialchars($event['name']) ?>"
@@ -84,7 +84,7 @@ if (!is_array($events)) {
 
     <!-- Event Details Modal -->
     <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+        <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="eventModalLabel">Event Details</h5>
@@ -92,7 +92,7 @@ if (!is_array($events)) {
                 </div>
                 <div class="modal-body">
                     <div class="text-center">
-                        <img id="eventImage" src="" class="img-fluid rounded mb-3" alt="Event Image" style="max-height: 300px;">
+                        <img id="eventImage" src="" class="img-fluid rounded mb-3" alt="Event Image" style="max-height: 200px;">
                     </div>
                     <h3 id="eventTitle" class="text-primary"></h3>
                     <p id="eventDate"></p>

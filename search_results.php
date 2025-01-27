@@ -46,7 +46,7 @@ $events = $eventController->searchEvents($search);
             <?php if (!empty($events)): ?>
                 <?php foreach ($events as $event): ?>
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                        <div class="card shadow border-0 h-100">
+                        <div class="card  border-1 h-100">
                             <div class="image-container">
                                 <img src="<?= BASE_URL ?>public/uploads/<?= htmlspecialchars($event['image']) ?>"
                                     class="card-img-top rounded-top img-fluid"

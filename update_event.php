@@ -3,7 +3,7 @@ require_once __DIR__ . '/app/config.php';
 require_once __DIR__ . '/app/controllers/EventController.php';
 
 if (!isset($_SESSION['user_id'])) {
-    redirect('public/login.php');
+    redirect('login.php');
 }
 
 // Get event ID from URL

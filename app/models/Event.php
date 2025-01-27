@@ -103,11 +103,18 @@ class EventModel
     }
 
 
-    public function getAllEvents()
+    // public function getAllEvents()
+    // {
+    //     $stmt = $this->pdo->query("SELECT * FROM events ORDER BY date ASC");
+    //     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // }
+    public function getAllEvents($user_id)
     {
-        $stmt = $this->pdo->query("SELECT * FROM events ORDER BY date ASC");
+        $stmt = $this->pdo->prepare("SELECT * FROM events WHERE created_by = ?");
+        $stmt->execute([$user_id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
 
     public function getLatestEvents($limit = 5)
     {
