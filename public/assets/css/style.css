@@ -75,9 +75,53 @@ body {
 }
 
 .fc-day-today {
-  background-color: rgb(204 237 187 / 15%) !important;
+  background-color: rgb(187, 255, 152) !important;
 }
 
+.fc .fc-col-header-cell-cushion,
+.fc .fc-daygrid-day-number {
+  text-decoration: none;
+  color: black;
+}
+.fc-daygrid-event-dot {
+  display: none;
+}
+
+.fc-daygrid-dot-event {
+  display: flex;
+  align-items: flex-start;
+  padding: 2px 0;
+  flex-direction: column;
+  padding: 5px;
+
+  color: black;
+}
+
+.fc-h-event,
+.fc-v-event {
+  background: #fcffd1;
+  border: 1px dotted gray;
+  color: black;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  padding: 5px;
+}
+.fc-event-main {
+  color: black !important;
+}
+
+.fc-daygrid-event {
+  position: relative;
+  white-space: normal;
+  border-radius: 3px;
+}
+.fc-timegrid-event-harness > .fc-timegrid-event {
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 @media (max-width: 768px) {
   .fc-toolbar {
     flex-direction: column;

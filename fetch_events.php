@@ -7,7 +7,7 @@ header('Content-Type: application/json');
 
 $eventController = new EventController($pdo);
 $attendeeController = new AttendeeController($pdo);
-$events = $eventController->getEvents();
+$events = $eventController->getEventsWithoutUserId();
 
 $eventList = [];
 

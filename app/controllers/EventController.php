@@ -66,6 +66,11 @@ class EventController
     }
 
 
+    public function getEventsWithoutUserId()
+    {
+        // Allow access to events even if not logged in
+        return $this->eventModel->getAllEventsWithoutUserId();
+    }
     public function getEvents($user_id)
     {
         // Allow access to events even if not logged in

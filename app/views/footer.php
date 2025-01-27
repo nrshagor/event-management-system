@@ -27,7 +27,18 @@
                 center: 'title',
                 right: 'dayGridMonth,timeGridWeek,timeGridDay'
             },
-            events: 'fetch_events.php',
+            events: 'fetch_events.php', // Your events fetching URL
+            eventTimeFormat: {
+                hour: 'numeric',
+                minute: '2-digit',
+                meridiem: 'short' // Use 'short' for AM/PM formatting like "10:00 AM"
+            },
+            eventDisplay: 'block', // Ensure the event name is shown properly
+            eventContent: function(info) {
+                return {
+                    html: `<b>${info.event.title}</b><br>${info.event.start.toLocaleTimeString([], {hour: 'numeric', minute: '2-digit', hour12: true})}`
+                };
+            },
             eventClick: function(info) {
                 fetch('event_details.php?event_id=' + info.event.id)
                     .then(response => response.json())
