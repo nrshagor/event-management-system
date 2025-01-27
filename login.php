@@ -31,12 +31,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php endif; ?>
 
                 <form method="POST">
-                    <div class="form-group">
+                    <div class="form-group pb-4">
                         <label>Email Address</label>
                         <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group pb-4">
                         <label>Password</label>
                         <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
                     </div>

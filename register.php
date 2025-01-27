@@ -41,17 +41,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <?php endif; ?>
 
                 <form action="" method="POST" id="registerForm">
-                    <div class="form-group">
+                    <div class="form-group pb-4">
                         <label>Username</label>
                         <input type="text" name="username" class="form-control" placeholder="Enter your username" required minlength="3">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group pb-4">
                         <label>Email Address</label>
                         <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group pb-4">
                         <label>Password</label>
                         <input type="password" name="password" class="form-control" placeholder="Enter your password" required minlength="6">
                     </div>

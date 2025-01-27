@@ -1,7 +1,7 @@
 </div> <!-- Closing container -->
 
-<footer class="bg-white text-center text-dark py-3 mt-5">
-    <p class="mb-0">© <?= date('Y') ?> Event Management. All Rights Reserved. || This system is made with <i class="fa-regular fa-heart"></i> by <a href="https://nrshagor.com/" target="_blank">nrshagor.com </a></p>
+<footer class="bg-white text-center text-dark py-3 footer">
+    <p class="mb-0">© <?= date('Y') ?> Event Management. All Rights Reserved. || This system is made with <i class="fa-regular fa-heart text-danger"></i> by <a href="https://nrshagor.com/" target="_blank">nrshagor.com </a></p>
 </footer>
 
 

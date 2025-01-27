@@ -15,101 +15,16 @@ if (!is_array($events)) {
 ?>
 
 <?php include __DIR__ . '/app/views/header.php'; ?>
-<style>
-    #calendar {
-        max-width: 900px;
-        margin: 0 auto;
-        background: #fff;
-        border-radius: 10px;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
 
-    #eventImage {
-        border-radius: 10px;
-        max-height: 300px;
-        object-fit: cover;
-        width: 100%;
-    }
-
-    .modal-body h3 {
-        font-size: 1.75rem;
-        font-weight: bold;
-    }
-
-    .fc-daygrid-event-harness {
-        cursor: pointer;
-    }
-
-    .fc .fc-daygrid-event-harness-abs {
-        position: relative;
-    }
-
-    .fc-h-event .fc-event-main-frame {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        height: 100%;
-    }
-
-    #calendar {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
-    .fc-toolbar-title {
-        font-size: 1.5rem !important;
-        /* Make the month title responsive */
-    }
-
-    .fc-daygrid-day-frame {
-        padding: 5px !important;
-        /* Reduce padding for small screens */
-    }
-
-    .fc-daygrid-day-bottom {
-        margin-top: 0px !important;
-    }
-
-    .fc-day-today {
-
-        background-color: rgb(204 237 187 / 15%) !important;
-    }
-
-    @media (max-width: 768px) {
-        .fc-toolbar {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .fc-toolbar .fc-toolbar-chunk {
-            margin-bottom: 10px;
-        }
-
-        #eventModal .modal-dialog {
-            max-width: 90%;
-        }
-
-        #eventImage {
-            max-height: 200px;
-        }
-
-        .modal-body p {
-            font-size: 0.9rem;
-        }
-    }
-</style>
-
-<div class="container text-center mt-5">
-    <h1 class="text-primary font-weight-bold">Welcome to Event Manager</h1>
+<div class="container text-center mt-5 mb-5">
+    <h1 class="landing-title">Welcome to Event <span class="text-orange">Manager</span> </h1>
 
     <div class="container mt-5">
         <h2 class="text-center mb-4">Event Calendar</h2>
         <div id="calendar"></div>
     </div>
 
-    <p class="lead text-muted">Discover and register for upcoming events with ease!</p>
+    <p class="sub-title">Discover and register for upcoming events with ease!</p>
 
     <div class="row mt-4">
         <?php if (!empty($events)): ?>

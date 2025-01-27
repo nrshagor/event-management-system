@@ -4,7 +4,7 @@ require_once __DIR__ . '/app/controllers/EventController.php';
 
 // Check authentication
 if (!isset($_SESSION['user_id'])) {
-    redirect('public/login.php');
+    redirect('login.php');
 }
 
 $eventController = new EventController($pdo);

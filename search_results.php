@@ -11,51 +11,68 @@ $events = $eventController->searchEvents($search);
 
 <?php include __DIR__ . '/app/views/header.php'; ?>
 
-<div class="container mt-5">
-    <h2 class="text-center mb-4 font-weight-bold text-dark">Search Results</h2>
 
-    <!-- Search Form -->
-    <form method="GET" action="search_results.php" class="form-inline justify-content-center mb-4">
-        <input type="text" name="search" class="form-control form-control-lg w-50 shadow-sm" placeholder="Search events..." value="<?= $search ?>">
-        <button type="submit" class="btn btn-primary btn-lg ml-2 shadow-sm">
-            <i class="fas fa-search"></i> Search
-        </button>
-    </form>
 
-    <div class="row">
-        <?php if (!empty($events)): ?>
-            <?php foreach ($events as $event): ?>
-                <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
-                    <div class="card shadow-lg border-0 h-100">
-                        <div class="image-container">
-                            <img src="<?= BASE_URL ?>public/uploads/<?= htmlspecialchars($event['image']) ?>"
-                                class="card-img-top rounded-top img-fluid"
-                                alt="<?= htmlspecialchars($event['name']) ?>"
-                                onerror="this.onerror=null;this.src='<?= BASE_URL ?>public/uploads/default-event.jpg';">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="text-primary font-weight-bold"><?= htmlspecialchars($event['name']) ?></h4>
-                            <p class="text-muted"><?= htmlspecialchars($event['description']) ?></p>
-                            <p><strong>Date:</strong> <?= date('F j, Y', strtotime($event['date'])) ?></p>
-                            <p><strong>Location:</strong> <?= htmlspecialchars($event['location']) ?></p>
-                            <a href="<?= BASE_URL ?>public/register_attendee.php?event_id=<?= $event['id'] ?>" class="btn btn-success btn-block font-weight-bold">
-                                Register Now
-                            </a>
+
+
+
+<div class="container mt-4 mb-4">
+    <a href=<?= BASE_URL ?> class="btn btn-light mb-3">Back</a>
+    <div class="card shadow  border-0 p-4">
+
+
+        <h2 class="text-center mb-4 text-dark">Search Results</h2>
+
+
+        <!-- Search Form -->
+        <form method="GET" action="search_results.php" class="form-inline justify-content-center mb-4">
+            <div class="row g-2 align-items-center">
+                <div class="col-md-9">
+                    <input type="text" name="search" class="form-control form-control-lg  shadow-sm" placeholder="Search events..." value="<?= $search ?>">
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary btn-lg ml-2 shadow-sm">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+
+            </div>
+        </form>
+
+
+
+
+        <div class="row">
+            <?php if (!empty($events)): ?>
+                <?php foreach ($events as $event): ?>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+                        <div class="card shadow border-0 h-100">
+                            <div class="image-container">
+                                <img src="<?= BASE_URL ?>public/uploads/<?= htmlspecialchars($event['image']) ?>"
+                                    class="card-img-top rounded-top img-fluid"
+                                    alt="<?= htmlspecialchars($event['name']) ?>"
+                                    onerror="this.onerror=null;this.src='<?= BASE_URL ?>public/uploads/default-event.jpg';">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="text-primary font-weight-bold"><?= htmlspecialchars($event['name']) ?></h4>
+                                <p class="text-muted"><?= htmlspecialchars($event['description']) ?></p>
+                                <p><strong>Date:</strong> <?= date('F j, Y', strtotime($event['date'])) ?></p>
+                                <p><strong>Location:</strong> <?= htmlspecialchars($event['location']) ?></p>
+                                <a href="<?= BASE_URL ?>public/register_attendee.php?event_id=<?= $event['id'] ?>" class="btn btn-success btn-block font-weight-bold">
+                                    Register Now
+                                </a>
+                            </div>
                         </div>
                     </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <div class="col-12">
+                    <div class="alert alert-warning text-center">No events found for your search query.</div>
                 </div>
-            <?php endforeach; ?>
-        <?php else: ?>
-            <div class="col-12">
-                <div class="alert alert-warning text-center">No events found for your search query.</div>
-            </div>
-        <?php endif; ?>
-    </div>
+            <?php endif; ?>
+        </div>
 
-    <div class="text-center mt-4">
-        <a href="<?= BASE_URL ?>/public/index.php" class="btn btn-secondary btn-lg font-weight-bold shadow-sm">
-            <i class="fas fa-arrow-left"></i> Back to Home
-        </a>
+
     </div>
 </div>
 

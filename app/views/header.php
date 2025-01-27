@@ -92,4 +92,4 @@
         </div>
     </nav>
 
-    <div class="container mt-4  min-vh-100 d-flex flex-row justify-content-center align-items-center">
+    <div class="container mt-4  min-vh-100 d-flex flex-row justify-content-center align-items-start">
