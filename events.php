@@ -147,17 +147,17 @@ $events = $eventController->getEvents($_SESSION['user_id']);
         // Initialize DataTable
         $(document).ready(function() {
             $('#eventTable').DataTable({
-                "pageLength": 10, // Show 10 rows by default
+                "pageLength": 10,
                 "lengthMenu": [
                     [10, 25, 50, 100, -1],
                     [10, 25, 50, 100, "All"]
                 ],
                 "order": [
                     [2, "asc"]
-                ], // Order by date column ascending
-                "searching": true, // Enable searching
-                "paging": true, // Enable pagination
-                "info": true // Show table information
+                ],
+                "searching": true,
+                "paging": true,
+                "info": true
             });
         });
 

@@ -9,7 +9,7 @@ class AttendeeController
     {
         $this->attendeeModel = new AttendeeModel($pdo);
     }
-
+    // Register Attendee
     public function registerAttendee($event_id, $user_name, $email)
     {
         if (empty($event_id) || empty($user_name) || empty($email)) {
@@ -39,7 +39,7 @@ class AttendeeController
 
         return "Registration failed. Please try again.";
     }
-
+    // Get List of Attendees
     public function listAttendees($event_id, $limit, $offset, $search = '')
     {
         if (empty($event_id)) {
@@ -48,7 +48,7 @@ class AttendeeController
 
         return $this->attendeeModel->getAttendeesByEvent($event_id, $limit, $offset, $search);
     }
-
+    // Count of Attendees
     public function countAttendees($event_id, $search = '')
     {
         if (empty($event_id)) {

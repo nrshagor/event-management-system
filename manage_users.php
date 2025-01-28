@@ -66,6 +66,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['user_id'])) {
         </div>
     </div>
 </div>
-
-
 <?php include __DIR__ . '/app/views/footer.php'; ?>

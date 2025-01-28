@@ -27,7 +27,6 @@ class EventController
         if (isset($_FILES['event_image']) && $_FILES['event_image']['error'] == UPLOAD_ERR_OK) {
             $uploadDir = __DIR__ . '/../../public/uploads/';
 
-            // Ensure directory exists
             if (!is_dir($uploadDir)) {
                 mkdir($uploadDir, 0777, true);
             }
@@ -64,19 +63,16 @@ class EventController
 
         return "Failed to create event.";
     }
-
-
     public function getEventsWithoutUserId()
     {
-        // Allow access to events even if not logged in
+        // Allow access to events even if not login
         return $this->eventModel->getAllEventsWithoutUserId();
     }
     public function getEvents($user_id)
     {
-        // Allow access to events even if not logged in
         return $this->eventModel->getAllEvents($user_id);
     }
-
+    // Get Event by id (need to login)
     public function getEventById($id)
     {
         if (!isset($_SESSION['user_id'])) {
@@ -86,12 +82,13 @@ class EventController
         $user_id = $_SESSION['user_id'];
         return $this->eventModel->getEventById($id, $user_id);
     }
+    // Get Event by ID (no need login)
     public function getEventByOnlyId($id)
     {
 
         return $this->eventModel->getEventByOnlyId($id);
     }
-
+    // Get Event with Paginated
     public function getPaginatedEvents($limit, $offset, $sort, $search)
     {
         if (!isset($_SESSION['user_id'])) {
@@ -111,7 +108,7 @@ class EventController
         $user_id = $_SESSION['user_id'];
         return $this->eventModel->getTotalEventsCount($user_id, $search);
     }
-
+    // Update Event
     public function updateEvent($id, $name, $description, $date, $location, $capacity)
     {
         if (!isset($_SESSION['user_id'])) {
@@ -164,10 +161,7 @@ class EventController
         return "Error updating event.";
     }
 
-
-
-
-
+    // Deleted Event
     public function deleteEvent($id)
     {
         if (!isset($_SESSION['user_id'])) {
@@ -181,12 +175,12 @@ class EventController
 
         return "Failed to delete event.";
     }
-
+    // Get Latest Events
     public function getLatestEvents($limit = 5)
     {
         return $this->eventModel->getLatestEvents($limit);
     }
-
+    // Search Event
     public function searchEvents($keyword)
     {
         return $this->eventModel->searchEvents($keyword);

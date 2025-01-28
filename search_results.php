@@ -11,11 +11,6 @@ $events = $eventController->searchEvents($search);
 
 <?php include __DIR__ . '/app/views/header.php'; ?>
 
-
-
-
-
-
 <div class="container mt-4 mb-4">
     <a href=<?= BASE_URL ?> class="btn btn-light mb-3">Back</a>
     <div class="card shadow  border-0 p-4">
@@ -38,9 +33,6 @@ $events = $eventController->searchEvents($search);
 
             </div>
         </form>
-
-
-
 
         <div class="row">
             <?php if (!empty($events)): ?>

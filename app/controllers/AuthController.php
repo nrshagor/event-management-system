@@ -10,7 +10,7 @@ class AuthController
     {
         $this->userModel = new User();
     }
-
+    // Register
     public function register($username, $email, $password)
     {
         if ($this->userModel->register($username, $email, $password)) {
@@ -23,6 +23,7 @@ class AuthController
             exit();
         }
     }
+    // Login
     public function login($email, $password)
     {
         $user = $this->userModel->getUserByEmail($email);
@@ -33,12 +34,11 @@ class AuthController
             $_SESSION['role'] = $user['role'];
             return true;
         } else {
-            return false;  // Ensure failure response
+            return false;
         }
     }
 
-    // logout
-
+    // Logout
     public function logout()
     {
         session_start();

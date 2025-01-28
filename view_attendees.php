@@ -59,8 +59,6 @@ $totalPages = ceil($totalAttendees / $limit);
             </div>
         </div>
 
-
-
         <!-- Responsive Table -->
         <div class="table-responsive">
             <table class="table table-bordered table-hover">
@@ -88,7 +86,6 @@ $totalPages = ceil($totalAttendees / $limit);
                 </tbody>
             </table>
         </div>
-
         <!-- Pagination -->
         <nav>
             <ul class="pagination justify-content-center">

@@ -62,12 +62,10 @@ body {
 
 .fc-toolbar-title {
   font-size: 1.5rem !important;
-  /* Make the month title responsive */
 }
 
 .fc-daygrid-day-frame {
   padding: 5px !important;
-  /* Reduce padding for small screens */
 }
 
 .fc-daygrid-day-bottom {
@@ -253,7 +251,6 @@ h2 {
 /* search php */
 .image-container {
   height: 250px;
-  /* Fixed height for the image */
   overflow: hidden;
 }
 
@@ -261,5 +258,4 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Ensures the image covers the div proportionally */
 }

@@ -70,13 +70,9 @@ if (!is_array($events)) {
         <?php endif; ?>
     </div>
 
-    <!-- See More Events Button -->
     <a href="<?= BASE_URL ?>search_results.php" class="btn btn-outline-primary btn-lg mt-3">
         See All Events
     </a>
-
-    <!-- Search Events Button -->
-
 
     <a href="<?= isset($_SESSION['user_id']) ? BASE_URL . 'events.php' : BASE_URL . 'login.php' ?>" class="btn btn-outline-secondary btn-lg mt-3">
         Manage Your Events
@@ -114,8 +110,6 @@ if (!is_array($events)) {
             </div>
         </div>
     </div>
-
-
 </div>
 
 <?php include __DIR__ . '/app/views/footer.php'; ?>

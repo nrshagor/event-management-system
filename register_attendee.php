@@ -3,9 +3,6 @@ require_once __DIR__ . '/app/config.php';
 require_once __DIR__ . '/app/controllers/AttendeeController.php';
 require_once __DIR__ . '/app/controllers/EventController.php';
 
-// if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'super_admin') {
-//     redirect('public/login.php');
-// }
 
 $attendeeController = new AttendeeController($pdo);
 $eventController = new EventController($pdo);
