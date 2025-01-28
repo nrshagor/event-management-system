@@ -9,7 +9,7 @@ require_once __DIR__ . '/app/controllers/EventController.php';
 
 $attendeeController = new AttendeeController($pdo);
 $eventController = new EventController($pdo);
-$events = $eventController->getEvents();
+$events = $eventController->getEventsWithoutUserId();
 
 // Check if event_id is passed in the URL
 $selected_event_id = isset($_GET['event_id']) ? intval($_GET['event_id']) : '';

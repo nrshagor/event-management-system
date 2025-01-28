@@ -4,7 +4,7 @@ require_once __DIR__ . '../../../app/config.php';
 require_once __DIR__ . '../../../app/controllers/EventController.php';
 
 $eventController = new EventController($pdo);
-$events = $eventController->getEvents();
+$events = $eventController->getEventsWithoutUserId();
 
 foreach ($events as $event): ?>
     <tr id="event-<?= $event['id'] ?>">
