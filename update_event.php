@@ -23,11 +23,11 @@ if (!$event) {
 ?>
 
 <?php include __DIR__ . '/app/views/header.php'; ?>
-<div class="container mt-4">
+<div class="container my-4">
     <div class="card shadow  border-0 p-4">
 
         <h2 class="text-center mb-4 text-dark">Update Event</h2>
-        <div id="message"></div>
+
 
         <form id="updateEventForm" method="POST" enctype="multipart/form-data">
             <input type="hidden" name="event_id" value="<?= $eventId ?>">
@@ -67,7 +67,9 @@ if (!$event) {
             <button type="submit" id="updateEventBtn" class="btn btn-primary">Update Event</button>
 
             <a href="events.php" class="btn btn-secondary">Cancel</a>
+            <div class="my-2" id="message"></div>
         </form>
+
     </div>
 </div>
 
