@@ -29,7 +29,11 @@ $totalPages = ceil($totalEvents / $limit);
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <h2 class="text-primary">Event Dashboard</h2>
-        <a href="dashboard.php" class="btn btn-outline-secondary">Clear Search</a>
+        <div>
+
+            <a href="events.php" class="btn btn-outline-primary btn-primary text-white">Create Event</a>
+        </div>
+
     </div>
 
     <div class="card shadow-sm">
@@ -40,6 +44,7 @@ $totalPages = ceil($totalEvents / $limit);
                 </div>
                 <div class="col-md-4 text-md-right">
                     <button type="submit" class="btn btn-primary">Search</button>
+                    <a href="dashboard.php" class="btn btn-outline-secondary">Clear Search</a>
                 </div>
             </form>
 
