@@ -16,7 +16,7 @@ if (!is_array($events)) {
 
 <?php include __DIR__ . '/app/views/header.php'; ?>
 
-<div class="container text-center mt-5 mb-5">
+<div class="container text-center mt-5 mb-5 ">
     <h1 class="landing-title">Welcome to Event <span class="text-orange">Manager</span> </h1>
 
     <div class="container mt-5">

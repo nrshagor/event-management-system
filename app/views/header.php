@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Management</title>
+    <title>Event Manager</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
@@ -31,9 +31,9 @@
 </head>
 
 
-<body>
+<body class="background-orange">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
 
             <a class="navbar-brand logo" href="<?= BASE_URL ?>"><img src="./public/image/eventLogo.png" alt="logo"></a>
@@ -93,4 +93,4 @@
         </div>
     </nav>
 
-    <div class="container mt-4  min-vh-100 d-flex flex-row justify-content-center align-items-start">
+    <div class=" container mt-4  min-vh-100 d-flex flex-row justify-content-center align-items-start">
