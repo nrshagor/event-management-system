@@ -28,7 +28,7 @@ $totalPages = ceil($totalEvents / $limit);
 
 <div class="container mt-5">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="text-primary">Event Dashboard</h2>
+        <h2 class="text-center text-dark">Event Dashboard</h2>
         <div>
 
             <a href="events.php" class="btn btn-outline-primary btn-primary text-white">Create Event</a>

@@ -47,6 +47,9 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link nav-btn" aria-current="page" href="<?= BASE_URL ?>all_events.php">All Event </a>
+                        </li>
 
                         <?php if (isset($_SESSION['role']) && ($_SESSION['role'] === 'admin' || $_SESSION['role'] === 'user' || $_SESSION['role'] === 'super_admin')): ?>
 

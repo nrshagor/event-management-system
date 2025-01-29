@@ -15,10 +15,6 @@ $events = $eventController->searchEvents($search);
     <a href=<?= BASE_URL ?> class="btn btn-light mb-3">Back</a>
     <div class="card shadow  border-0 p-4">
 
-
-        <h2 class="text-center mb-4 text-dark">Search Results</h2>
-
-
         <!-- Search Form -->
         <form method="GET" action="search_results.php" class="form-inline justify-content-center mb-4">
             <div class="row g-2 align-items-center">
