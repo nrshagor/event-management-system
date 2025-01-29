@@ -32,8 +32,8 @@ if ($selected_event_id) {
         <div class="event-banner text-center mb-4">
             <img src="<?= BASE_URL ?>public/uploads/<?= $selected_event['image']; ?>"
                 alt="<?= htmlspecialchars($selected_event['name']); ?>"
-                class="img-fluid rounded shadow"
-                style="max-height: 300px; width: 100%; object-fit: cover;">
+                class="img-fluid rounded"
+                style="max-height: 400px; width: 100%; object-fit: cover;">
         </div>
 
         <div class="alert alert-info">

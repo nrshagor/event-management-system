@@ -66,11 +66,22 @@
                                 document.getElementById('eventRegisterLink').href = '#';
                             } else {
                                 document.getElementById('eventCapacity').innerText = remainingSeats + ' spots left!';
-                                document.getElementById('eventRegisterLink').innerText = 'Register Now';
-                                document.getElementById('eventRegisterLink').classList.remove('btn-danger');
-                                document.getElementById('eventRegisterLink').classList.add('btn-primary');
-                                document.getElementById('eventRegisterLink').href = 'register_attendee.php?event_id=' + info.event.id;
-                                document.getElementById('eventRegisterLink').removeAttribute('disabled');
+                                if (remainingSeats > 0) {
+                                    document.getElementById('eventRegisterLink').innerText = 'Register Now';
+                                    document.getElementById('eventRegisterLink').classList.remove('btn-danger');
+                                    document.getElementById('eventRegisterLink').classList.add('btn-primary');
+                                    document.getElementById('eventRegisterLink').href = 'register_attendee.php?event_id=' + info.event.id;
+                                    document.getElementById('eventRegisterLink').removeAttribute('disabled');
+
+                                } else {
+                                    document.getElementById('eventRegisterLink').innerText = 'Event is fully Booked';
+                                    document.getElementById('eventRegisterLink').classList.remove('btn-primary');
+                                    document.getElementById('eventRegisterLink').classList.add('btn-danger');
+                                    document.getElementById('eventRegisterLink').href = '#';
+                                    document.getElementById('eventRegisterLink').removeAttribute('disabled', true);
+
+                                }
+
                             }
 
                             var myModal = new bootstrap.Modal(document.getElementById('eventModal'));
